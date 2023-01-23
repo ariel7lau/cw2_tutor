@@ -1,0 +1,24 @@
+body {
+    background-color: lavender;
+    background-image: url("default.jpg");
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+h1 {
+    color: #333333;
+    text-align: center;
+    margin-top: 50px;
+}
+
+p {
+    color: #666666;
+    text-align: justify;
+    margin: 20px;
+}
+
+footer {
+    font-size: 14px;
+}
