@@ -15,13 +15,11 @@
   </div>
   {{ comment.submit() }}
 </form>
-<br>
+
 <h1>Recent Comments</h1>
-<ul>
-  {% for comment in comments %}
-    <li>{{ comment.name }}: {{ comment.comment }}</li>
-  {% endfor %}
-</ul>
-{% endblock content%}
-
-
+{% for allcomment in allcomment %}
+  <div>{{ allcomment.date }}</div>
+  <div>{{ allcomment.name }}</div>
+  <div>{{ allcomment.comment }}</div>
+{% endfor %}
+{% endblock content %}
