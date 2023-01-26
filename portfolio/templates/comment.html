@@ -17,9 +17,11 @@
 </form>
 
 <h1>Recent Comments</h1>
-{% for allcomment in allcomment %}
-  <div>{{ allcomment.date }}</div>
-  <div>{{ allcomment.name }}</div>
-  <div>{{ allcomment.comment }}</div>
+{% for mycomment in recentcomments %}
+  <div>{{ mycomment.date }}</div>
+  <div>{{ mycomment.name }}</div>
+  <div>{{ mycomment.comment }}</div>
 {% endfor %}
 {% endblock content %}
+
+
