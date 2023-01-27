@@ -17,11 +17,21 @@
 </form>
 
 <h1>Recent Comments</h1>
-{% for mycomment in recentcomments %}
-  <div>{{ mycomment.date }}</div>
-  <div>{{ mycomment.name }}</div>
-  <div>{{ mycomment.comment }}</div>
-{% endfor %}
+<form>
+  <select id="order-select" onchange="orderChanged()">
+    <option value="date-ascending">Date (Ascending)</option>
+    <option value="date-descending">Date (Descending)</option>
+  </select>
+</form>
+
+<div id="comments-container">
+  {% for mycomment in recentcomments %}
+    <div class="comment-container">
+      <div class="comment-date">{{ mycomment.date }}</div>
+      <div class="comment-name">{{ mycomment.name }}</div>
+      <div class="comment-text">{{ mycomment.comment }}</div>
+    </div>
+  {% endfor %}
+</div>
+
 {% endblock content %}
-
-
