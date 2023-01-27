@@ -1,15 +1,45 @@
 {% extends 'layout.html' %}
-
-{% block title %}About{% endblock %}
-
 {% block content %}
-<div>
-    <h3>Welcome to my ABOUT PAGE</h3>
-    <ul>
-            <li>
-                <h2>xxxxxxx</h2>
-                <p>xxxxxxxxxxxxxxxx</p>
-            </li>
-    </ul>
+
+{% block title %}<h3>Project Directory</h3>{% endblock %}
+
+<div style="display: grid; justify-content: left;">
+<form action="{{ url_for('about') }}" method="POST">
+    <label for="year">Year:</label>
+    <select name="year" id="year">
+        <option value=""></option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+    </select>
+    <label for="category">Category:</label>
+    <select name="category" id="category">
+        <option value=""></option>
+        <option value="Academic">Academic</option>
+        <option value="Professional">Professional</option>
+        <option value="Personal">Personal</option>
+    </select>
+    <input type="submit" value="Filter">
+</form>
 </div>
+
+<table>
+    <tr>
+        <th>Year</th>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    {% for project in projects %}
+    <tr>
+        <td>{{ project.year }}</td>
+        <td>{{ project.project_category }}</td>
+        <td>{{ project.project_name }}</td>
+        <td>{{ project.project_description }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div class="table-margin"></div>
+
 {% endblock content %}
